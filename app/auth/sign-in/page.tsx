@@ -1,3 +1,4 @@
+import Logo from '@/components/icons/logo';
 import Mail from '@/components/icons/mail';
 import QRCode from '@/components/icons/qr-code';
 import {Button} from '@/components/ui/button';
@@ -10,11 +11,13 @@ export default function SignIn() {
   return (
     <div className="relative z-10">
       <div>
-        <span className="text-base font-black leading-none">Bruddle</span>
+        <Logo />
 
         <div className="mt-16">
-          <h2 className="text-h1 font-extrabold">Sign in</h2>
-          <p className="mt-1 text-sm text-gray">Enter your account details or use QR code</p>
+          <h2 className="text-h1 font-extrabold dark:text-white">Sign in</h2>
+          <p className="mt-1 text-sm text-gray dark:text-white/50">
+            Enter your account details or use QR code
+          </p>
         </div>
 
         <form className="mt-12 flex max-w-[29.188rem] flex-col gap-y-6">
@@ -33,7 +36,7 @@ export default function SignIn() {
 
             <Link
               href="#"
-              className="ml-[0.375rem] text-xs font-bold hover:text-primary focus:text-primary focus:outline-none"
+              className="ml-[0.375rem] text-xs font-bold hover:text-primary focus:text-primary focus:outline-none dark:text-white dark:hover:text-primary dark:focus:text-primary"
             >
               Recover password
             </Link>
@@ -43,7 +46,7 @@ export default function SignIn() {
 
           <div className="flex items-center justify-center gap-x-[0.938rem]">
             <Separator className="w-[8.25rem]" />
-            <span>or</span>
+            <span className="text-sm dark:text-white">or</span>
             <Separator className="w-[8.25rem]" />
           </div>
 
@@ -56,10 +59,10 @@ export default function SignIn() {
         </form>
 
         <div className="mt-20 text-sm">
-          <span>You don&apos;t have an account?</span>
+          <span className="dark:text-white">You don&apos;t have an account?</span>
           <Link
             href="#"
-            className="ml-[0.375rem] font-bold hover:text-primary focus:text-primary focus:outline-none"
+            className="ml-[0.375rem] font-bold hover:text-primary focus:text-primary focus:outline-none dark:text-white dark:hover:text-primary dark:focus:text-primary"
           >
             Create an account
           </Link>

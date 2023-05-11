@@ -83,13 +83,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {type === 'password' ? (
           <button
             type="button"
-            className="absolute bottom-0 right-0 mb-[1.375rem] mr-[1.063rem] text-gray hover:text-black focus:text-black focus:outline-none"
+            className="absolute bottom-0 right-0 mb-[1.375rem] mr-[1.063rem] text-gray hover:text-black focus:text-black focus:outline-none dark:text-white/75 dark:hover:text-white dark:focus:text-white"
             onClick={() => setVisible(v => !v)}
           >
             {visible ? <Eye /> : <EyeSlash />}
           </button>
         ) : icon ? (
-          <div className="absolute bottom-0 right-0 mb-[1.375rem] mr-[1.063rem] text-black">
+          <div className="absolute bottom-0 right-0 mb-[1.375rem] mr-[1.063rem] text-black dark:text-white">
             {icon}
           </div>
         ) : null}
