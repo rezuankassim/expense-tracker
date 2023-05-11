@@ -19,9 +19,9 @@ const Circle2: FC<Circle2Props> = ({className}) => {
         r="305"
         transform="rotate(75 308 308)"
         stroke="currentColor"
-        stroke-width="4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

@@ -5,6 +5,7 @@ import Circle2 from '@/components/illustrations/circle-2';
 import CircleDot from '@/components/illustrations/circle-dot';
 import Streamer from '@/components/illustrations/streamer';
 import Streamer2 from '@/components/illustrations/streamer-2';
+import CalendarEvent from '@/components/mockups/calendar-event';
 import Image from 'next/image';
 
 export default function AuthLayout({children}: {children: React.ReactNode}) {
@@ -46,6 +47,53 @@ export default function AuthLayout({children}: {children: React.ReactNode}) {
         <AsymmetricLines className="absolute right-0 top-0 mr-[130px] mt-[320px] text-black dark:text-white" />
 
         <AsymmetricLines2 className="absolute bottom-0 right-0 mb-20 mr-[440px] text-black dark:text-white" />
+
+        <Image
+          className="absolute right-0 top-0 mr-[400px] mt-20 shadow-primary-sm"
+          src="/counter-numeric-w-bars.webp"
+          alt="illustration"
+          width={200}
+          height={74}
+        />
+
+        <Image
+          className="absolute right-0 top-0 mr-[320px] mt-48 shadow-primary-sm"
+          src="/crm-customer-view.webp"
+          alt="illustration"
+          width={203}
+          height={259}
+        />
+
+        <Image
+          className="absolute bottom-0 right-0 -mr-10 mb-64 shadow-primary-sm"
+          src="/project-item-view.webp"
+          alt="illustration"
+          width={254}
+          height={259}
+        />
+
+        <Image
+          className="absolute bottom-0 right-0 mb-72 mr-[405px] shadow-primary-sm"
+          src="/counter-numeric-w-bars-2.webp"
+          alt="illustration"
+          width={226}
+          height={115}
+        />
+
+        <CalendarEvent
+          label="Update design system"
+          className="absolute right-0 top-0 mr-24 mt-64"
+        />
+
+        <CalendarEvent
+          label="Assign tasks"
+          className="absolute bottom-0 right-0 mb-44 mr-[440px]"
+        />
+
+        <CalendarEvent
+          label="Mockup for web app"
+          className="absolute bottom-0 right-0 mb-32 mr-80"
+        />
       </div>
     </section>
   );
