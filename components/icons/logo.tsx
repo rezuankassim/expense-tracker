@@ -98,7 +98,7 @@ const Logo: FC = () => {
       </svg>
 
       <svg
-        className="hidden md:block"
+        className="hidden dark:block"
         width="100"
         height="22"
         viewBox="0 0 100 22"

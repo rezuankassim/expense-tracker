@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className={`${robotoFlex.className} bg-stone text-dark dark:bg-dark-soft`}>
         {children}
       </body>
