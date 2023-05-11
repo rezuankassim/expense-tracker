@@ -11,6 +11,7 @@ const CalendarEvent: FC<CalendarEventProps> = ({label, className}) => {
     <div
       className={cn(
         'flex w-fit items-center gap-x-[0.625rem] border border-black bg-white py-2 pl-[0.625rem] pr-7 text-xs font-bold text-black',
+        'dark:border-white dark:bg-black dark:text-white',
         className
       )}
     >

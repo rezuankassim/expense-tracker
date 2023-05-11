@@ -49,7 +49,7 @@ export default function AuthLayout({children}: {children: React.ReactNode}) {
         <AsymmetricLines2 className="absolute bottom-0 right-0 mb-20 mr-[440px] text-black dark:text-white" />
 
         <Image
-          className="absolute right-0 top-0 mr-[400px] mt-20 shadow-primary-sm"
+          className="absolute right-0 top-0 mr-[400px] mt-20 block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm"
           src="/counter-numeric-w-bars.webp"
           alt="illustration"
           width={200}
@@ -57,7 +57,15 @@ export default function AuthLayout({children}: {children: React.ReactNode}) {
         />
 
         <Image
-          className="absolute right-0 top-0 mr-[320px] mt-48 shadow-primary-sm"
+          className="absolute right-0 top-0 mr-[400px] mt-20 hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm"
+          src="/counter-numeric-w-bars-dark.webp"
+          alt="illustration"
+          width={200}
+          height={74}
+        />
+
+        <Image
+          className="absolute right-0 top-0 mr-[320px] mt-48 block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm"
           src="/crm-customer-view.webp"
           alt="illustration"
           width={203}
@@ -65,7 +73,15 @@ export default function AuthLayout({children}: {children: React.ReactNode}) {
         />
 
         <Image
-          className="absolute bottom-0 right-0 -mr-10 mb-64 shadow-primary-sm"
+          className="absolute right-0 top-0 mr-[320px] mt-48 hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm"
+          src="/crm-customer-view-dark.webp"
+          alt="illustration"
+          width={203}
+          height={259}
+        />
+
+        <Image
+          className="absolute bottom-0 right-0 -mr-10 mb-64 block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm"
           src="/project-item-view.webp"
           alt="illustration"
           width={254}
@@ -73,8 +89,24 @@ export default function AuthLayout({children}: {children: React.ReactNode}) {
         />
 
         <Image
-          className="absolute bottom-0 right-0 mb-72 mr-[405px] shadow-primary-sm"
+          className="absolute bottom-0 right-0 -mr-10 mb-64 hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm"
+          src="/project-item-view-dark.webp"
+          alt="illustration"
+          width={254}
+          height={259}
+        />
+
+        <Image
+          className="absolute bottom-0 right-0 mb-72 mr-[405px] block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm"
           src="/counter-numeric-w-bars-2.webp"
+          alt="illustration"
+          width={226}
+          height={115}
+        />
+
+        <Image
+          className="absolute bottom-0 right-0 mb-72 mr-[405px] hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm"
+          src="/counter-numeric-w-bars-dark-2.webp"
           alt="illustration"
           width={226}
           height={115}
