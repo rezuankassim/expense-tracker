@@ -16,7 +16,7 @@ const Checkbox = React.forwardRef<
       ref={ref}
       id={id}
       className={cn(
-        'peer h-5 w-5 shrink-0 rounded-[0.063rem] border border-black ring-offset-stone focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-80 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-secondary-accent-3 data-[state=checked]:bg-secondary-accent-3 data-[state=checked]:text-white dark:border-white dark:data-[state=checked]:border-secondary-accent-3',
+        'peer h-5 w-5 shrink-0 rounded-[0.063rem] border border-black ring-offset-stone focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-80 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-secondary-accent-3 data-[state=checked]:bg-secondary-accent-3 data-[state=checked]:text-white dark:border-white dark:ring-offset-dark dark:data-[state=checked]:border-secondary-accent-3',
         className
       )}
       {...props}

@@ -74,16 +74,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {...props}
         />
 
-        {error ? (
-          <Error className="absolute bottom-0 right-0 mb-[1.375rem] mr-[0.938rem] text-secondary-accent-2" />
-        ) : success ? (
-          <Check className="absolute bottom-0 right-0 mb-[1.375rem] mr-[0.938rem] text-secondary-accent-3" />
-        ) : null}
-
         {type === 'password' ? (
           <button
             type="button"
-            className="absolute bottom-0 right-0 mb-[1.375rem] mr-[1.063rem] text-gray hover:text-black focus:text-black focus:outline-none dark:text-white/75 dark:hover:text-white dark:focus:text-white"
+            className="absolute bottom-0 right-0 mb-[1.375rem] mr-[1.063rem] text-gray ring-offset-white hover:text-black focus:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-80 focus-visible:ring-offset-2 dark:text-white/75 dark:ring-offset-black dark:hover:text-white dark:focus:text-white"
             onClick={() => setVisible(v => !v)}
           >
             {visible ? <Eye /> : <EyeSlash />}
@@ -92,6 +86,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <div className="absolute bottom-0 right-0 mb-[1.375rem] mr-[1.063rem] text-black dark:text-white">
             {icon}
           </div>
+        ) : error ? (
+          <Error className="absolute bottom-0 right-0 mb-[1.375rem] mr-[0.938rem] text-secondary-accent-2" />
+        ) : success ? (
+          <Check className="absolute bottom-0 right-0 mb-[1.375rem] mr-[0.938rem] text-secondary-accent-3" />
         ) : null}
       </div>
     );

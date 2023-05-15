@@ -1,3 +1,4 @@
+import {ClerkProvider} from '@clerk/nextjs';
 import './globals.css';
 import {Roboto_Flex} from 'next/font/google';
 
@@ -10,10 +11,12 @@ export const metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en">
-      <body className={`${robotoFlex.className} bg-stone text-dark dark:bg-dark-soft`}>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className="dark">
+        <body className={`${robotoFlex.className} bg-stone text-dark dark:bg-dark-soft`}>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
