@@ -9,15 +9,16 @@ import {Label} from './label';
 
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & {label?: string}
->(({className, label, id, ...props}, ref) => (
+  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> & {label?: string; error?: boolean}
+>(({className, label, id, error = false, ...props}, ref) => (
   <div className="flex items-center space-x-[0.625rem]">
     <CheckboxPrimitive.Root
       ref={ref}
       id={id}
       className={cn(
         'peer h-5 w-5 shrink-0 rounded-[0.063rem] border border-black ring-offset-stone focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-80 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-secondary-accent-3 data-[state=checked]:bg-secondary-accent-3 data-[state=checked]:text-white dark:border-white dark:ring-offset-dark dark:data-[state=checked]:border-secondary-accent-3',
-        className
+        className,
+        error ? 'border-secondary-accent-2' : ''
       )}
       {...props}
     >

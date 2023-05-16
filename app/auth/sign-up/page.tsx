@@ -2,37 +2,41 @@
 
 import Logo from '@/components/icons/logo';
 import Mail from '@/components/icons/mail';
-import QRCode from '@/components/icons/qr-code';
 import {Button} from '@/components/ui/button';
 import {Checkbox} from '@/components/ui/checkbox';
 import {Input} from '@/components/ui/input';
-import {Separator} from '@/components/ui/separator';
-import {useSignIn} from '@clerk/nextjs';
+import {useSignUp} from '@clerk/nextjs';
 import {useFormik} from 'formik';
 import Link from 'next/link';
 import {useRouter} from 'next/navigation';
 import * as Yup from 'yup';
 
-export default function SignIn() {
-  const {isLoaded, signIn, setActive} = useSignIn();
+export default function SignUp() {
+  const {isLoaded, signUp, setActive} = useSignUp();
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
+      name: '',
       email: '',
       password: '',
+      terms: false,
     },
     validationSchema: Yup.object({
+      name: Yup.string().required(),
       email: Yup.string().email().required(),
       password: Yup.string().required(),
+      terms: Yup.boolean().isTrue(),
     }),
     onSubmit: async (values, {setErrors}) => {
       if (!isLoaded) {
         return;
       }
 
-      await signIn
-        ?.create({
-          identifier: values.email,
+      await signUp
+        .create({
+          firstName: values.name.split(' ').at(0),
+          lastName: values.name.split(' ').at(-1),
+          emailAddress: values.email,
           password: values.password,
         })
         .then(async result => {
@@ -42,7 +46,7 @@ export default function SignIn() {
           }
         })
         .catch(err => {
-          setErrors({email: 'Email invalid', password: 'Password invalid'});
+          setErrors({name: 'Name invalid', email: 'Email invalid', password: 'Password invalid'});
         });
     },
   });
@@ -53,9 +57,9 @@ export default function SignIn() {
         <Logo />
 
         <div className="mt-16">
-          <h2 className="text-h1 font-extrabold dark:text-white">Sign in</h2>
+          <h2 className="text-h1 font-extrabold dark:text-white">Sign up</h2>
           <p className="mt-1 text-sm text-gray dark:text-white/50">
-            Enter your account details or use QR code
+            Before we start, please enter your information.
           </p>
         </div>
 
@@ -63,6 +67,16 @@ export default function SignIn() {
           className="mt-12 flex max-w-[29.188rem] flex-col gap-y-6"
           onSubmit={formik.handleSubmit}
         >
+          <Input
+            label="Name"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            onChange={formik.handleChange}
+            value={formik.values.name}
+            error={!!formik.errors.name}
+          />
+
           <Input
             label="Email"
             id="email"
@@ -85,16 +99,14 @@ export default function SignIn() {
             error={!!formik.errors.password}
           />
 
-          <div className="flex items-center justify-between">
-            <Checkbox id="remember" label="Remember me" />
-
-            <Link
-              href="/auth/forgot-password"
-              className="ml-[0.375rem] text-xs font-bold ring-offset-stone hover:text-primary focus-visible:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-80 focus-visible:ring-offset-2 dark:text-white dark:ring-offset-black dark:hover:text-primary dark:focus-visible:text-primary"
-            >
-              Recover password
-            </Link>
-          </div>
+          <Checkbox
+            id="terms"
+            name="terms"
+            label="I have read and agree to Terms of Service"
+            onCheckedChange={checked => formik.setFieldValue('terms', checked)}
+            checked={formik.values.terms}
+            error={!!formik.errors.terms}
+          />
 
           <Button type="submit" size="lg">
             Sign In
@@ -102,12 +114,12 @@ export default function SignIn() {
         </form>
 
         <div className="mt-20 text-sm">
-          <span className="dark:text-white">You don&apos;t have an account?</span>
+          <span className="dark:text-white">Already registered?</span>
           <Link
-            href="/auth/sign-up"
+            href="/auth/sign-in"
             className="ml-[0.375rem] font-bold ring-offset-stone hover:text-primary focus:outline-none focus-visible:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-opacity-80 focus-visible:ring-offset-2 dark:text-white dark:ring-offset-black dark:hover:text-primary dark:focus-visible:text-primary"
           >
-            Create an account
+            Sign in to your account
           </Link>
         </div>
       </div>
