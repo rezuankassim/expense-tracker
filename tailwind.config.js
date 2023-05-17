@@ -3,11 +3,6 @@ module.exports = {
   darkMode: ['class'],
   content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}'],
   theme: {
-    screens: {
-      md: '768px',
-      lg: '1024px',
-      xl: '1200px',
-    },
     fontSize: {
       h1: ['3rem', '3.5rem'],
       h2: ['2.25rem', '2.875rem'],

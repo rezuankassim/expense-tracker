@@ -12,26 +12,26 @@ import Image from 'next/image';
 const Auth: FC = () => {
   return (
     <div className="absolute right-0 top-0 h-full w-full">
-      <Circle className="absolute right-0 top-0 mt-7 text-black dark:text-white" />
+      <Circle className="absolute right-0 top-0 -mr-64 mt-7 text-black dark:text-white xl:mr-0" />
 
-      <CircleDot className="absolute right-0 top-0 mr-80 mt-[106px] text-black dark:text-white" />
+      <CircleDot className="absolute right-0 top-0 mr-2 mt-[69px] text-black dark:text-white xl:mr-80 xl:mt-[106px]" />
 
-      <Circle2 className="absolute right-0 top-0 mt-40 text-black dark:text-white" />
+      <Circle2 className="absolute right-0 top-0 -mr-64 mt-40 text-black dark:text-white xl:mr-0" />
 
-      <CircleDot className="absolute right-0 top-0 mr-20 mt-[151px] text-black dark:text-white" />
+      <CircleDot className="invisible absolute right-0 top-0 mr-20 mt-[151px] text-black dark:text-white xl:visible" />
 
-      <CircleDot className="absolute bottom-0 right-0 mb-[118px] mr-44 text-black dark:text-white" />
+      <CircleDot className="invisible absolute bottom-0 right-0 mb-[118px] mr-44 text-black dark:text-white xl:visible" />
 
-      <Streamer className="absolute right-0 top-0 mr-36 mt-20 text-black dark:text-white" />
+      <Streamer className="invisible absolute right-0 top-0 mr-36 mt-20 text-black dark:text-white xl:visible" />
 
-      <Streamer2 className="absolute bottom-0 right-0 mb-72 mr-72 text-black dark:text-white" />
+      <Streamer2 className="absolute bottom-0 right-0 mb-72 mr-10 text-black dark:text-white xl:mr-72" />
 
-      <AsymmetricLines className="absolute right-0 top-0 mr-[130px] mt-[320px] text-black dark:text-white" />
+      <AsymmetricLines className="invisible absolute right-0 top-0 mr-[130px] mt-[320px] text-black dark:text-white xl:visible" />
 
-      <AsymmetricLines2 className="absolute bottom-0 right-0 mb-20 mr-[440px] text-black dark:text-white" />
+      <AsymmetricLines2 className="absolute bottom-0 right-0 mb-20 mr-48 text-black dark:text-white xl:mr-[440px]" />
 
       <Image
-        className="absolute right-0 top-0 mr-[400px] mt-20 block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm"
+        className="absolute right-0 top-0 mr-48 mt-10 block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm xl:mr-[400px] xl:mt-20"
         src="/counter-numeric-w-bars.webp"
         alt="illustration"
         width={200}
@@ -39,7 +39,7 @@ const Auth: FC = () => {
       />
 
       <Image
-        className="absolute right-0 top-0 mr-[400px] mt-20 hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm"
+        className="absolute right-0 top-0 mr-48 mt-10 hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm xl:mr-[400px] xl:mt-20"
         src="/counter-numeric-w-bars-dark.webp"
         alt="illustration"
         width={200}
@@ -47,7 +47,7 @@ const Auth: FC = () => {
       />
 
       <Image
-        className="absolute right-0 top-0 mr-[320px] mt-48 block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm"
+        className="absolute right-0 top-0 mr-16 mt-48 block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm xl:mr-[320px]"
         src="/crm-customer-view.webp"
         alt="illustration"
         width={203}
@@ -55,7 +55,7 @@ const Auth: FC = () => {
       />
 
       <Image
-        className="absolute right-0 top-0 mr-[320px] mt-48 hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm"
+        className="absolute right-0 top-0 mr-16 mt-48 hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm xl:mr-[320px]"
         src="/crm-customer-view-dark.webp"
         alt="illustration"
         width={203}
@@ -63,7 +63,7 @@ const Auth: FC = () => {
       />
 
       <Image
-        className="absolute bottom-0 right-0 -mr-10 mb-64 block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm"
+        className="invisible absolute bottom-0 right-0 -mr-10 mb-64 block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm xl:visible"
         src="/project-item-view.webp"
         alt="illustration"
         width={254}
@@ -71,7 +71,7 @@ const Auth: FC = () => {
       />
 
       <Image
-        className="absolute bottom-0 right-0 -mr-10 mb-64 hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm"
+        className="invisible absolute bottom-0 right-0 -mr-10 mb-64 hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm xl:visible"
         src="/project-item-view-dark.webp"
         alt="illustration"
         width={254}
@@ -79,7 +79,7 @@ const Auth: FC = () => {
       />
 
       <Image
-        className="absolute bottom-0 right-0 mb-72 mr-[405px] block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm"
+        className="absolute bottom-0 right-0 mb-72 mr-44 block shadow-primary-sm dark:hidden dark:shadow-primary-dark-sm xl:mr-[405px]"
         src="/counter-numeric-w-bars-2.webp"
         alt="illustration"
         width={226}
@@ -87,18 +87,27 @@ const Auth: FC = () => {
       />
 
       <Image
-        className="absolute bottom-0 right-0 mb-72 mr-[405px] hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm"
+        className="absolute bottom-0 right-0 mb-72 mr-44 hidden shadow-primary-sm dark:block dark:shadow-primary-dark-sm xl:mr-[405px]"
         src="/counter-numeric-w-bars-dark-2.webp"
         alt="illustration"
         width={226}
         height={115}
       />
 
-      <CalendarEvent label="Update design system" className="absolute right-0 top-0 mr-24 mt-64" />
+      <CalendarEvent
+        label="Update design system"
+        className="invisible absolute right-0 top-0 mr-24 mt-64 xl:visible"
+      />
 
-      <CalendarEvent label="Assign tasks" className="absolute bottom-0 right-0 mb-44 mr-[440px]" />
+      <CalendarEvent
+        label="Assign tasks"
+        className="absolute bottom-0 right-0 mb-44 mr-48 xl:mr-[440px]"
+      />
 
-      <CalendarEvent label="Mockup for web app" className="absolute bottom-0 right-0 mb-32 mr-80" />
+      <CalendarEvent
+        label="Mockup for web app"
+        className="absolute bottom-0 right-0 mb-32 mr-28 xl:mr-80"
+      />
     </div>
   );
 };
